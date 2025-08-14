@@ -67,7 +67,7 @@ sns.distplot(np.log(data["ApplicantIncome"]))
 
 plt.show()
 
-#Slice this data by Education
+#Boxplot
 
 data.boxplot(column='ApplicantIncome', by="Education", figsize=(8,5))
 plt.suptitle("")
@@ -123,7 +123,7 @@ plt.xlabel("CoapplicantIncome")
 plt.ylabel("Percentage")
 plt.show()
 
-## What's the problem here? Why co-applicant having low income is getting maximum loan approved?
+
 
 data['CoapplicantIncome'].value_counts().head().reset_index()
 
@@ -199,7 +199,7 @@ sns.countplot(x='Able_to_pay_EMI', data = data, hue = 'Loan_Status')
 ###There is 50% chance that you may get the loan approved if you cannot pay the EMI.
 ###But there, is a 72% chance that you may get the loan approved if you can pay the EMI.
 
-# Dependents and Loan **approval**
+# Dependents and Loan approval
 
 data['Dependents'].value_counts().reset_index()
 
@@ -222,7 +222,7 @@ data['Credit_History'].value_counts()
 sns.countplot(data =data, x = 'Credit_History', hue = 'Loan_Status')
 #Observation:
 ## We can clearly see that the approval rate is 80% if your credit history is aligned with the guidlines.
-## Hence this is the most important question that can be considered.
+
 
 # Missing Values & Data Cleaning
 
@@ -365,7 +365,7 @@ sns.heatmap(data.corr(method='spearman'), square=True,annot=True)
 
 plt.scatter(data['Credit_History'], data['Loan_Status'])
 plt.show()
-#sometimes scatter plots can be misleading do to catgeorical nature of the data
+#sometimes scatter plots can be misleading due to catgeorical nature of the data
 
 sns.countplot(data =data, x = 'Credit_History', hue = 'Loan_Status')
 
